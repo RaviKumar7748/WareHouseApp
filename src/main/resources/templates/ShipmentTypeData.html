@@ -1,0 +1,56 @@
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style type="text/css">
+h3, table {
+	background-color: green;
+	padding: 12px;
+	margin: 12px;
+	font-family: sans-serif;
+	text-align: center;
+	box-shadow: 0 0 10px black;
+	border-radius: 12px;
+	text-shadow: white;
+	border-color: gray;
+	color: white;
+}
+div{
+text-align: center;
+align-items: center;
+}
+
+</style>
+</head>
+<body>
+	<h3>WELCOME TO SHIPMENT TYPE DATA PAGE!</h3>
+	<div>
+	<table border="1">
+	<tr>
+	<td>ID</td>
+	<td>MODE</td>
+	<td>CODE</td>
+	<td>ENABLE</td>
+	<td>GRADE</td>
+	<td>DESCRIPTION</td>
+	<td>OPERATION</td>
+	</tr>
+	<tr th:each="ob:${list}" >
+	<td th:text=${ob.shipmentId}></td>
+	<td th:text=${ob.shipmentMode}></td>
+	<td th:text=${ob.shipmentCode}></td>
+	<td th:text=${ob.enableShipment}></td>
+	<td th:text=${ob.shipmentGrade}></td>
+	<td th:text=${ob.shipmentDescription}></td>
+	<td>
+	<a th:href="@{/shipmenttype/delete/{id}(id=${ob.shipmentId})}">DELETE</a>
+	</td>  
+	
+	
+	
+	</tr>
+	</table>
+	</div>
+	<span th:text="${message}"></span>
+</body>
+</html>

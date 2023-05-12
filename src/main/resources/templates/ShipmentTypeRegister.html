@@ -1,0 +1,56 @@
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style type="text/css">
+h3,form{
+ background-color: green;
+ padding: 12px;
+ margin: 12px;
+ font-family: sans-serif;
+ text-align: center;
+ box-shadow: 0 0 10px black;
+ border-radius: 12px;
+ text-shadow: white;
+ border-color: gray;
+ color: white;
+ 
+
+}
+</style>
+</head>
+<body>
+	<h3>WELCOME TO SHIPMENT TYPE REGISTER PAGE</h3>
+	<form action="save" method="post">
+		<pre>
+Shipment Mode : <select name="shipmentMode">
+                 <option value="">-SELECT-</option>
+                 <option value="Air"> Air</option>
+                 <option value="Truck">Truck</option>
+                 <option value="Ship">Ship</option>
+                 <option value="Train">Train</option>
+                </select>
+Shipment Code: <input type="text" name="shipmentCode">
+Enable Shipment:<select name="enableShipment">
+                 <option value="">-SELECT-</option>
+                 <option value="yes">YES</option>
+                 <option value="no">N0</option>
+                 </select> 
+ Shipment Grade: 
+                <input type="radio" name="shipmentGrade" value="A" />A
+                <input type="radio" name="shipmentGrade" value="B" />B
+                <input type="radio" name="shipmentGrade" value="C" />C
+               
+                                  
+ Description :<textarea rows="" cols="" name="shipmentDescription"></textarea>
+          <input type="submit" value="Create Shipment">              
+
+</pre>
+
+
+
+
+	</form>
+	<span th:text="${message}"></span>
+</body>
+</html>

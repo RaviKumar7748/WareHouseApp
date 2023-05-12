@@ -1,0 +1,16 @@
+server:
+  port: 9090
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: ravikumar
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/warehouse
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    
+#  mvc:
+#    pathmatch:
+#      matching-strategy: ant-path-matcher
